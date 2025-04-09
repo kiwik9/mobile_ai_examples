@@ -4,4 +4,10 @@
     <string name="clear_button_text" translatable="false">Clear</string>
     <string name="prediction_text_placeholder" translatable="false">Please draw a digit</string>
     <string name="classification_error_message" translatable="false">Error classifying drawing: %s</string>
+
+    <string name="select_image_for_text_recognition">Select image for text recognition</string>
+    <string name="find_text_button">Find text</string>
+    <string name="find_face_contour_button">Find face contour</string>
+    <string name="find_text_cloud_button">Find text (cloud)</string>
+    <string name="find_objects_button">Find objects</string>
 </resources>

@@ -11,7 +11,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
 
-package com.example.inktest
+package com.example.inktest.digit
 
 import android.content.Context
 import android.content.res.AssetManager
@@ -69,6 +69,8 @@ class DigitClassifier(private val context: Context) {
     val inputShape = interpreter.getInputTensor(0).shape()
     inputImageWidth = inputShape[1]
     inputImageHeight = inputShape[2]
+
+    // indica cuántos bytes de memoria debemos asignar para almacenar la entrada de nuestro modelo TensorFlow Lite
     modelInputSize = FLOAT_TYPE_SIZE * inputImageWidth * inputImageHeight * PIXEL_SIZE
 
     this.interpreter = interpreter
@@ -151,7 +153,9 @@ class DigitClassifier(private val context: Context) {
   // Constantes de configuración
   companion object {
     private const val TAG = "DigitClassifier"
+    // Indica cuántos bytes requiere nuestro tipo de dato de entrada
     private const val FLOAT_TYPE_SIZE = 4
+    // Indica cuántos canales de color hay en cada píxel
     private const val PIXEL_SIZE = 1
     private const val OUTPUT_CLASSES_COUNT = 10
   }

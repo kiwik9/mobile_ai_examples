@@ -33,10 +33,13 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    aaptOptions {
+        noCompress += "tflite"
+    }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -50,4 +53,14 @@ dependencies {
     implementation ("com.github.divyanshub024:AndroidDraw:v0.1")
     implementation("org.tensorflow:tensorflow-lite:2.17.0")
 
+    // Face and text features
+    implementation("com.google.mlkit:face-detection:16.0.0")
+    implementation("com.google.android.gms:play-services-mlkit-text-recognition:16.0.0")
+
+    val camerax_version = "1.3.0" // o la versión más reciente disponible
+
+    implementation("androidx.camera:camera-core:$camerax_version")
+    implementation("androidx.camera:camera-camera2:$camerax_version")
+    implementation("androidx.camera:camera-lifecycle:$camerax_version")
+    implementation("androidx.camera:camera-view:$camerax_version")
 }
